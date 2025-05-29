@@ -11,10 +11,10 @@ body {
   background-color: #ddd;
 }
 
-#button.stop-color { 
+#button.stop-color {
   /* #button을 사용하면 !important 사용 안해도됨. */
-  background-color: tomato;}
-
+  background-color: tomato;
+}
 
 .stopwatch {
   display: inline-block;
@@ -29,8 +29,8 @@ body {
   display: block;
   margin-bottom: 16px;
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.4em;
   text-transform: uppercase;
-  trans
   color: grey;
 }
 
@@ -42,7 +42,7 @@ body {
 #screen {
   background-color: black;
   color: #fff;
-  font-family: "Press Start 2P", system-ui;
+  font-family: 'Press Start 2P', system-ui;
   padding: 13px 15px;
   border-radius: 2px;
 }
@@ -52,4 +52,3 @@ body {
   padding: 9px 15px;
   border-radius: 2px;
 }
-

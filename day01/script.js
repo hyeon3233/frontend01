@@ -24,18 +24,25 @@ if ($screen && $toggleButton) {
     //$toggleButton.computedStyleMap.backroundColor =
     //stopWatchOn ? 'rgb(255,0,0)' : 'rgb(255,255,0)';
     $toggleButton.classList.toggle('stop-color');
-    if(stopWatchOn) {
-      timeInterval = setInterval( () => {
+    if (stopWatchOn) {
+      // 첫번째 인자: 콜백함수
+      // 두번째 인자: Number - ms
+      timeInterval = setInterval(() => {
+        /*
+          1초 > 100
+          1분 > 60초 > 6000
+        */
         seconds++;
         const mm = String(Math.floor(seconds / 6000) % 60).padStart(2, '0');
         const ss = String(Math.floor(seconds / 100) % 60).padStart(2, '0');
         const cs = String(seconds % 100).padStart(2, '0');
         $screen.innerText = `${mm}:${ss}:${cs}`;
       }, 10);
-
-    } else { 
-
+    } else {
+      clearInterval(timeInterval);
+      seconds = 0;
+      $screen.innerText = '00:00:00';
+      
     }
-  
   });
 }
