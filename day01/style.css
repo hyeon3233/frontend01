@@ -11,6 +11,11 @@ body {
   background-color: #ddd;
 }
 
+#button.stop-color { 
+  /* #button을 사용하면 !important 사용 안해도됨. */
+  background-color: tomato;}
+
+
 .stopwatch {
   display: inline-block;
   padding: 48px 32px 72px 32px;
@@ -25,6 +30,7 @@ body {
   margin-bottom: 16px;
   font-family: 'Noto Sans KR', sans-serif;
   text-transform: uppercase;
+  trans
   color: grey;
 }
 
@@ -41,8 +47,9 @@ body {
   border-radius: 2px;
 }
 #button {
-  background-color: rgb(50, 50, 199);
+  background-color: steelblue;
   color: #fff;
   padding: 9px 15px;
   border-radius: 2px;
 }
+

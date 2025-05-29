@@ -20,6 +20,22 @@ if ($screen && $toggleButton) {
   //});
   $toggleButton.addEventListener('click', () => {
     stopWatchOn = !stopWatchOn;
-    console.log('stopWatchOn: ', stopWatchOn);
+    $toggleButton.innerHTML = stopWatchOn ? '■' : '▶';
+    //$toggleButton.computedStyleMap.backroundColor =
+    //stopWatchOn ? 'rgb(255,0,0)' : 'rgb(255,255,0)';
+    $toggleButton.classList.toggle('stop-color');
+    if(stopWatchOn) {
+      timeInterval = setInterval( () => {
+        seconds++;
+        const mm = String(Math.floor(seconds / 6000) % 60).padStart(2, '0');
+        const ss = String(Math.floor(seconds / 100) % 60).padStart(2, '0');
+        const cs = String(seconds % 100).padStart(2, '0');
+        $screen.innerText = `${mm}:${ss}:${cs}`;
+      }, 10);
+
+    } else { 
+
+    }
+  
   });
 }
