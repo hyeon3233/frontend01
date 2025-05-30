@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        form태그는 사용자가 작성한 데이터를 백엔드로 보낼 때 사용
+        action: 목적지(URL)
+        method(보내는 방법): get방식, post방식
+
+        get방식: 목적지URL에 데이터를 실어서 보낸다. 내용이 보임.
+                 데이터는 쿼리스트링(Query String, Parameters)으로 표현
+
+        Post방식: Request는 head, body로 이루어져 있는데 body에 데이터를 담아서 보내는 방식.
+                  표면상 내용이 보이지 않음.
+    -->
+    <form action="./01-result.html" method="get">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="my-name" />
+      <br /><br />
+      <label for="age">나이</label>
+      <input type="text" id="age" name="my-age" />
+      <br /><br />
+      <input type="submit" value="제출" />
+      <input type="reset" value="초기화" />
+    </form>
+  </body>
+</html>
