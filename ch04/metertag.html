@@ -10,7 +10,27 @@
     <button id="prgStarBtn" type="button">시작</button>
 
     <script>
+      const $progressBar = document.querySelector('#progressBar');
       const $prgStarBtn = document.querySelector('#prgStarBtn');
+
+      let value = 0;
+      let intervalObj = null;
+      $prgStarBtn.addEventListener('click', () => {
+        $progressBar.value = 0;
+        if (intervalObj) {
+          clearInterval(intervalObj);
+          value = 0;
+        }
+
+        intervalObj = setInterval(() => {
+          if (value >= 100) {
+            clearInterval(intervalObj);
+            value = 0;
+            return;
+          }
+          $progressBar.value = ++value;
+        }, 10);
+      });
     </script>
   </body>
 </html>
