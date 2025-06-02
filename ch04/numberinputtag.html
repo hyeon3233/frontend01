@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      input[type='range'] {
+        width: 200px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for=""
+        >number: <input type="number" name="age" min="0" max="200"
+      /></label>
+      <div><input type="submit" value="확인" /></div>
+      <div>
+        <label
+          >rangr:
+          <input
+            type="range"
+            name="price"
+            name="price"
+            min="20"
+            max="80"
+            step="5"
+          />
+          <span id="range_display"></span>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          <input type="date" name="birth_date" min="2025-06-03" />
+        </label>
+      </div>
+
+      <div><input type="submit" value="확인" /></div>
+    </form>
+    <script>
+      const $range = document.querySelector('input[type="range"]');
+      const $rangeDisplay = document.querySelector('#range_display');
+      $rangeDisplay.innerText = $range.value;
+
+      const $date = document.querySelector(
+        'input[type="date"][name="birth_date"]'
+      );
+      const today = new Date();
+      today.setDate(today.getDate() + 1);
+      // const tomorrow = new Date(today.getDate() + 1);
+      const year = today.getFullYear();
+      const mon = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      const nowDate = `${year}-${mon}-${day}`;
+      $date.value = nowDate;
+      $date.setAttribute('min', nowDate);
+      console.log('nowDate:', nowDate);
+
+      $range.addEventListener('change', function (e) {
+        $rangeDisplay.innerText = e.target.value;
+      });
+    </script>
+  </body>
+</html>
