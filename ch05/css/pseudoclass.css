@@ -1,0 +1,8 @@
+.outer li { color: olivedrab;}
+
+.starter ~ li { font-style: italic;}
+
+ol :first-child
+, ol :last-child { color: yellowgreen;}
+
+.outer > li:last-child 
