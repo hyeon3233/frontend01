@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: beige;
+        margin-top: 20px;
+      }
+      .static {
+        position: static;
+        left: 20px;
+      }
+      .relative {
+        position: relative;
+        left: 20px;
+        top: 20px;
+      }
+      .absolute {
+        position: absolute;
+        background-color: brown;
+        top: 10px;
+      }
+      .absolute2 {
+        position: absolute;
+        left: 160px;
+        top: 10px;
+      }
+      .absolute3 {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: bisque;
+        font-size: 0.5rem;
+        left: 10px;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="static">static-div</div>
+    <div class="relative">relative-div</div>
+    <div class="absolute">absolute</div>
+    <hr />
+    <div class="static">
+      static-div2
+      <div class="absolute2">absolute-div2</div>
+    </div>
+    <hr />
+    <div class="relative">
+      static-div2
+      <div class="absolute3">absolute-div2</div>
+    </div>
+  </body>
+</html>
