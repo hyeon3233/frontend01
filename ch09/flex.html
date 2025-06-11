@@ -4,61 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .header {
-            display: flex;
-            flex-basis: 100px;
-            align-items: flex-end;
-            padding: 12px;
-            background-color: dodgerblue;
-            gap: 12px;
-        }
-        .header > * {
-            background-color: yellow;
-            padding: 12px 0;
-            text-align: center;
-        }
-        .header > *:first-child {
-            flex-basis: 100px;
-        }
-        .header > *:last-child {
-            flex-grow: 1;
-        }
-        .main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-        }
-        .content {
-            padding: 24px;
-            background-color: skyblue;
-        }
-        .footer {
-            flex-basis: 60px;
-            background-color: tomato;
-        }
-    </style>
+    <link rel="stylesheet" href="flex.css">
 </head>
 <body>
-    <div class="container">
-    <div class="header">
+    <div id="container">
+    <div id="header">
         <div>로고</div>
         <div>메뉴들</div>
       </div>
-      <div class="main">
-        <div class="content">부모의 한가운데 배치</div>
+      <div id="main">
+        <div id="content">부모의 한가운데 배치</div>
         </div>
-        <div class="footer">
-
+        <div id="footer">
         </div>
       </div>
     </div>
