@@ -26,7 +26,7 @@
         <li>포도</li>
       </ul>
     </section>
-    <section>
+    <section id="meat">
       <h2>고기</h2>
       <ul>
         <li class="soldout">소고기</li>
@@ -36,21 +36,22 @@
     </section>
     <script>
       const $vegetableTitle = document.querySelector('#vegetable_title');
-      //$vegetableTitle.textContent = 'Vegetable';
-      //$vegetableTitle.innerText = 'Vegetable';
-      $vegetableTitle.innerHTML = 'Vegetable';
-      const $onion = document.querySelector('section ul').lastElementChild;
-      console.log('$onion.classList: ', $onion.classList);
-      console.log(Array.isArray($onion.classList));
-      console.log(Array.isArray([]));
-      $onion.classList.remove('hidden');
-      $onion.classList.add('organic');
-      //$onion.className = 'kkk vvv organic';
-      $onion.style.fontSize = '2em';
-      //점으로 백그라운드 컬러를 blue로 변경
-      $onion.style.backgroundColor = 'mediumspringgreen';
-      //$onion.style['background-color'] = 'mediumspringgreen';
-      $onion.style.listStyleType = 'none';
+      $vegetableTitle.remove();
+      console.log('$vegetableTitle: ', $vegetableTitle);
+
+      const $selfH2Tag = document.createElement('h2');
+      $selfH2Tag.textContent = '내가 만든 h2';
+      const $secondSection = document.querySelector('#sweets');
+      $secondSection.prepend($vegetableTitle);
+
+      $secondSection.append($selfH2Tag);
+      $secondSection.children[0].remove();
+
+      const $meat = document.querySelectorAll('#meat > ul > li');
+      for(const item of $meat){
+        item.remove();
+      }
+                
     </script>
   </body>
 </html>
