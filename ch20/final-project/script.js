@@ -38,28 +38,28 @@ const aboutCards = [
 ];
 
 // for(const item of aboutCards) {
-    //     const $div = document.createElement('div');
-    
-    //     $div.classList.add('about__card');
-    
-    //     $div.innerHTML = `
-    //         <img class="about__icon" src="${item.img}" alt="">
-    
-    //         <h2 class="about__title _1">
-    //         ${item.title}
-    //         </h2>
-    
-    //         <p class="about__text">
-    //         ${item.descs[0]}
-    //         <br>
-    //         ${item.descs[1]}
-    //         </p>
-    //     `;
-    
-    //     $aboutDiv.appendChild($div);
-    // }
-    const $aboutDiv = document.querySelector('#about > div.about');
-    
+//         const $div = document.createElement('div');
+
+//         $div.classList.add('about__card');
+
+//         $div.innerHTML = `
+//             <img class="about__icon" src="${item.img}" alt="">
+
+//             <h2 class="about__title _1">
+//             ${item.title}
+//             </h2>
+
+//             <p class="about__text">
+//             ${item.descs[0]}
+//             <br>
+//             ${item.descs[1]}
+//             </p>
+//         `;
+
+//         $aboutDiv.appendChild($div);
+//     }
+const $aboutDiv = document.querySelector('#about > div.about');
+
 aboutCards.forEach((item, idx) => {
   let desc = '';
   if (item.descs.length > 0) {
@@ -79,9 +79,53 @@ aboutCards.forEach((item, idx) => {
   $aboutDiv.appendChild($div);
 });
 
-const $currLiList = document.querySelectorAll('#curriculum .curriculum__list li');
-const $currProgBar = document.querySelector('#curriculum .curriculum__progress .bar');
+const $currLiList = document.querySelectorAll(
+  '#curriculum .curriculum__list li'
+);
+const $currProgBar = document.querySelector(
+  '#curriculum .curriculum__progress .bar'
+);
 
 $currLiList.forEach((item, idx) => {
-    item.addEventListener('mouseenter', () => $currProgBar.style.width = `${200 * idx}px`);
+  item.addEventListener(
+    'mouseenter',
+    () => ($currProgBar.style.width = `${200 * idx}px`)
+  );
+});
+
+const $contactTabs = document.querySelectorAll('#contact #ct_1, #contact #ct_2 ');
+// const $contactTabs = document.querySelector('#contact input[name="contact"]');
+console.log($contactTabs);
+const $contactSlideCon = document.querySelector('#contact .contact__slide-con');
+
+$contactTabs.forEach((item, idx) => {
+  const marginLeft = [0, '-100vw'][idx];
+
+  // let marginLeft2;
+  // if(idx === 0) {
+  //   marginLeft2 = 0;
+  // } else if(idx === 1) {
+  //   marginLeft2 = '-100vw';
+  // }
+  item.addEventListener('click', () => {
+    $contactSlideCon.style.marginLeft = marginLeft;
+  });
+});
+
+const $menuBtn = document.querySelector('header.header button.header__menu-btn'); // on
+const $headerNav = document.querySelector('header.header nav.header__nav'); // active
+
+
+
+$menuBtn.addEventListener('click', e => {
+  e.target.classList.toggle('on');
+  $headerNav.classList.toggle('active');
+
+  e.stopPropagation(); // 버블링 중지
+});
+
+const $body = document.querySelector('body');
+$body.addEventListener('click', () => {
+  $menuBtn.classList.remove('on');
+  $headerNav.classList.remove('active');
 });
